@@ -1,0 +1,10 @@
+# Training and submission artifacts are useful in Git but not needed inside
+# the production serverless bundle.
+data/
+outputs/
+notebooks/
+presentation/
+scripts/
+requirements-training.txt
+models/test_predictions.csv
+README.md

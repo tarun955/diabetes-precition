@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "functions": {
+    "api/predict.py": {
+      "runtime": "python3.12",
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  }
+}

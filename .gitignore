@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.local
+.DS_Store
+
+# Local data can be large or contain sensitive data. Model artifacts are
+# intentionally trackable because the Vercel function needs them at runtime.
+data/*.csv
+data/*.xlsx
+outputs/
+
+# Keep empty folders in Git.
+!data/.gitkeep
+!models/.gitkeep

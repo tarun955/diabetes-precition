@@ -1,0 +1,203 @@
+{
+  "source": "data\\diabetes_prediction_dataset.csv",
+  "target": "diabetes",
+  "features": [
+    "gender",
+    "smoking_history",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "bmi",
+    "HbA1c_level",
+    "blood_glucose_level"
+  ],
+  "categorical_features": [
+    "gender",
+    "smoking_history"
+  ],
+  "numeric_features": [
+    "age",
+    "hypertension",
+    "heart_disease",
+    "bmi",
+    "HbA1c_level",
+    "blood_glucose_level"
+  ],
+  "records": 100000,
+  "missing_values": {
+    "gender": 0,
+    "smoking_history": 0,
+    "age": 0,
+    "hypertension": 0,
+    "heart_disease": 0,
+    "bmi": 0,
+    "HbA1c_level": 0,
+    "blood_glucose_level": 0,
+    "diabetes": 0
+  },
+  "class_distribution": {
+    "0": 91500,
+    "1": 8500
+  },
+  "test_records": 20000,
+  "tuning": {
+    "search": "RandomizedSearchCV",
+    "iterations_per_model": 4,
+    "cv_folds": 3,
+    "scoring": "roc_auc",
+    "random_state": 42
+  },
+  "metrics": {
+    "random_forest": {
+      "accuracy": 0.9724,
+      "precision": 1.0,
+      "recall": 0.675294,
+      "f1": 0.80618,
+      "roc_auc": 0.976482
+    },
+    "gradient_boosting": {
+      "accuracy": 0.9723,
+      "precision": 0.993115,
+      "recall": 0.678824,
+      "f1": 0.806429,
+      "roc_auc": 0.978823
+    }
+  },
+  "manual_metrics": {
+    "random_forest": {
+      "accuracy": 0.9724,
+      "precision": 1.0,
+      "recall": 0.675294,
+      "specificity": 1.0
+    },
+    "gradient_boosting": {
+      "accuracy": 0.9723,
+      "precision": 0.993115,
+      "recall": 0.678824,
+      "specificity": 0.999563
+    }
+  },
+  "best_params": {
+    "random_forest": {
+      "model__n_estimators": 250,
+      "model__min_samples_leaf": 8,
+      "model__max_features": 0.7,
+      "model__max_depth": 12,
+      "model__class_weight": null
+    },
+    "gradient_boosting": {
+      "model__subsample": 1.0,
+      "model__n_estimators": 150,
+      "model__min_samples_leaf": 6,
+      "model__max_depth": 2,
+      "model__learning_rate": 0.15
+    }
+  },
+  "cv_score": {
+    "random_forest": 0.975586,
+    "gradient_boosting": 0.978066
+  },
+  "feature_importance": {
+    "random_forest": [
+      {
+        "feature": "HbA1c_level",
+        "importance": 0.564266
+      },
+      {
+        "feature": "blood_glucose_level",
+        "importance": 0.365749
+      },
+      {
+        "feature": "age",
+        "importance": 0.033852
+      },
+      {
+        "feature": "bmi",
+        "importance": 0.026665
+      },
+      {
+        "feature": "smoking_history_No Info",
+        "importance": 0.003557
+      },
+      {
+        "feature": "gender_Female",
+        "importance": 0.001445
+      },
+      {
+        "feature": "gender_Male",
+        "importance": 0.001366
+      },
+      {
+        "feature": "smoking_history_never",
+        "importance": 0.000718
+      },
+      {
+        "feature": "smoking_history_not current",
+        "importance": 0.000656
+      },
+      {
+        "feature": "smoking_history_current",
+        "importance": 0.00064
+      },
+      {
+        "feature": "smoking_history_former",
+        "importance": 0.000554
+      },
+      {
+        "feature": "smoking_history_ever",
+        "importance": 0.000532
+      }
+    ],
+    "gradient_boosting": [
+      {
+        "feature": "HbA1c_level",
+        "importance": 0.642995
+      },
+      {
+        "feature": "blood_glucose_level",
+        "importance": 0.316779
+      },
+      {
+        "feature": "age",
+        "importance": 0.027225
+      },
+      {
+        "feature": "bmi",
+        "importance": 0.011061
+      },
+      {
+        "feature": "smoking_history_No Info",
+        "importance": 0.001337
+      },
+      {
+        "feature": "gender_Male",
+        "importance": 0.000483
+      },
+      {
+        "feature": "smoking_history_ever",
+        "importance": 5.5e-05
+      },
+      {
+        "feature": "smoking_history_not current",
+        "importance": 2.1e-05
+      },
+      {
+        "feature": "smoking_history_former",
+        "importance": 2e-05
+      },
+      {
+        "feature": "smoking_history_current",
+        "importance": 1.7e-05
+      },
+      {
+        "feature": "smoking_history_never",
+        "importance": 7e-06
+      },
+      {
+        "feature": "hypertension",
+        "importance": 0.0
+      }
+    ]
+  },
+  "trained_at": "2026-10-13T14:24:05.252483+00:00"
+}
