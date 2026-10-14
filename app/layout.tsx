@@ -3,8 +3,8 @@ import AppShell from "@/components/AppShell";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ensemble Diabetes Lab",
-  description: "Random Forest and Gradient Boosting diabetes prediction study.",
+  title: "Diabetes model study",
+  description: "A visual, plain-language comparison of Random Forest and Gradient Boosting.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

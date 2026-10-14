@@ -274,4 +274,11 @@ def build_presentation() -> None:
 
 
 if __name__ == "__main__":
-    build_notebook(); build_presentation(); print("Created notebook and four-slide presentation.")
+    build_notebook()
+    # The final deck uses the real working prototype screenshots. Keeping the
+    # deck builder separate prevents the notebook generation code from making
+    # assumptions about presentation layout.
+    from create_screenshot_deck import build as build_screenshot_deck
+
+    build_screenshot_deck()
+    print("Created notebook and four-slide screenshot presentation.")

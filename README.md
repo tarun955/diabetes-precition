@@ -93,9 +93,13 @@ Generated files:
 
 - `notebooks/diabetes_ensemble_study.ipynb`
 - `presentation/diabetes_ensemble_presentation.pptx`
+- `presentation/prototype-screens.pdf`
+- `presentation/screenshots/*.png`
 
-The presentation reads the exported metrics if they exist. Generate it again
-after training to replace any `—` placeholders with the real validation scores.
+The final deck uses the four real working prototype screenshots stored in
+`presentation/screenshots/`: Overview, Prediction, Compare models, and
+Understand the data. Generate it again with `python scripts/create_deliverables.py`
+after refreshing those screenshots.
 
 ## 5. Run the UI and deploy to Vercel
 

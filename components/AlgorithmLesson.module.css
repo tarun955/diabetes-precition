@@ -1,0 +1,550 @@
+.lesson {
+  --ochre: #a86f32;
+  --ochre-soft: #f1e6d2;
+  --rule: rgba(23, 59, 52, 0.22);
+  background: var(--paper, #f7f5ee);
+  color: var(--ink, #173b34);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: clamp(22px, 3.2vw, 34px) clamp(18px, 4vw, 52px) 20px;
+}
+
+.lesson *,
+.lesson *::before,
+.lesson *::after {
+  box-sizing: border-box;
+}
+
+.lessonHeader {
+  align-items: end;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+}
+
+.headingCopy h2,
+.explanationPane h3 {
+  color: var(--ink, #173b34);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.headingCopy h2 {
+  font-size: clamp(27px, 3vw, 40px);
+  line-height: 1.02;
+  margin: 0 0 9px;
+  max-width: 610px;
+}
+
+.headingCopy p {
+  color: rgba(23, 59, 52, 0.78);
+  margin: 0;
+  max-width: 670px;
+}
+
+.selector {
+  justify-self: end;
+  max-width: 100%;
+}
+
+.selectorLabel {
+  color: rgba(23, 59, 52, 0.68);
+  display: block;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.modelToggle {
+  border-bottom: 0;
+  display: flex;
+  gap: clamp(15px, 2.5vw, 30px);
+  max-width: 100%;
+}
+
+.modelButton {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: rgba(23, 59, 52, 0.62);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  gap: 7px;
+  min-height: 36px;
+  padding: 3px 0 8px;
+  text-align: left;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.modelButton:hover {
+  color: var(--ink, #173b34);
+}
+
+.modelButton:focus-visible,
+.nextButton:focus-visible {
+  outline: 3px solid rgba(5, 104, 95, 0.34);
+  outline-offset: 3px;
+}
+
+.modelButton[aria-pressed="true"] {
+  border-bottom-color: var(--teal, #05685f);
+  color: var(--ink, #173b34);
+  font-weight: 700;
+}
+
+.modelButton.boostButton[aria-pressed="true"] {
+  border-bottom-color: var(--ochre, #a86f32);
+}
+
+.buttonKey {
+  color: var(--teal, #05685f);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.boostButton .buttonKey {
+  color: var(--ochre, #a86f32);
+}
+
+.lessonRule {
+  height: 0;
+  margin-top: 22px;
+}
+
+.lessonContent {
+  align-items: center;
+  display: grid;
+  gap: clamp(28px, 5vw, 68px);
+  grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr);
+  min-height: 252px;
+  padding: 23px 0 15px;
+}
+
+.visualPane {
+  min-width: 0;
+}
+
+.modelHeading {
+  align-items: center;
+  color: var(--ink, #173b34);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  gap: 8px;
+}
+
+.modelDot {
+  background: var(--teal, #05685f);
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+}
+
+.boostDot {
+  background: var(--ochre, #a86f32);
+}
+
+.modelDescriptor {
+  color: rgba(23, 59, 52, 0.62);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.diagramFigure {
+  margin: 12px 0 0;
+}
+
+.forestDiagram,
+.boostingDiagram {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
+.forestDiagram {
+  max-height: 164px;
+}
+
+.boostingDiagram {
+  max-height: 157px;
+}
+
+.tree {
+  color: var(--teal, #05685f);
+  opacity: 0.34;
+  transition: opacity 160ms ease;
+}
+
+.treeReached {
+  opacity: 0.72;
+}
+
+.treeCurrent {
+  opacity: 1;
+}
+
+.treeBranch {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-width: 2;
+}
+
+.treeNode {
+  fill: var(--paper, #f7f5ee);
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.treeLeaf {
+  fill: currentColor;
+  opacity: 0.14;
+}
+
+.treeOutput {
+  fill: var(--ink, #173b34);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.treeLabel {
+  fill: var(--ink, #173b34);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+}
+
+.figcaption {
+  color: rgba(23, 59, 52, 0.72);
+  font-size: 13px;
+  line-height: 1.35;
+  margin-top: 4px;
+  max-width: 620px;
+}
+
+.equation {
+  align-items: baseline;
+  border-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+.equation span,
+.equation strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.equation strong {
+  color: var(--teal, #05685f);
+  font-weight: 700;
+}
+
+.equation small {
+  color: rgba(23, 59, 52, 0.68);
+  font-size: 13px;
+}
+
+.explanationPane {
+  border-left: 0;
+  max-width: 410px;
+  padding-left: clamp(20px, 3vw, 38px);
+}
+
+.explanationPane h3 {
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.04;
+  margin: 0 0 10px;
+}
+
+.liveCopy {
+  min-height: 112px;
+}
+
+.liveCopy p {
+  color: rgba(23, 59, 52, 0.8);
+  margin: 0;
+  max-width: 390px;
+}
+
+.controlLine {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 15px;
+  margin-top: 15px;
+}
+
+.nextButton {
+  align-items: center;
+  background: var(--ink, #173b34);
+  border: 0;
+  color: var(--paper, #f7f5ee);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 10px;
+  min-height: 39px;
+  padding: 8px 12px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.nextButton:hover {
+  background: var(--teal, #05685f);
+  border-color: var(--teal, #05685f);
+}
+
+.boostNextButton {
+  background: var(--ochre, #a86f32);
+  border-color: var(--ochre, #a86f32);
+}
+
+.boostNextButton:hover {
+  background: #8d5b29;
+  border-color: #8d5b29;
+}
+
+.controlHint {
+  color: rgba(23, 59, 52, 0.65);
+  font-size: 13px;
+}
+
+.boostingVisual {
+  --boost-ink: var(--ochre, #a86f32);
+}
+
+.stageArrow {
+  fill: none;
+  stroke: rgba(23, 59, 52, 0.35);
+  stroke-linecap: square;
+  stroke-width: 1.5;
+}
+
+.arrowLabel {
+  fill: rgba(23, 59, 52, 0.65);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.boostStage {
+  color: var(--ochre, #a86f32);
+  opacity: 0.4;
+  transition: opacity 160ms ease;
+}
+
+.stageReached {
+  opacity: 0.7;
+}
+
+.stageCurrent {
+  opacity: 1;
+}
+
+.stageBlock {
+  fill: var(--ochre-soft, #f1e6d2);
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.stageTitle,
+.stageNumbers,
+.stageProbability,
+.stageUpdate {
+  fill: var(--ink, #173b34);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.stageTitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.stageNumbers,
+.stageProbability,
+.stageUpdate {
+  font-size: 13px;
+}
+
+.stageProbability {
+  font-weight: 700;
+}
+
+.stageUpdate {
+  fill: var(--ochre, #a86f32);
+  font-weight: 700;
+}
+
+.trainingNote {
+  border-top: 0;
+  color: rgba(23, 59, 52, 0.76);
+  font-size: 14px;
+  line-height: 1.35;
+  margin-top: 8px;
+  padding-top: 9px;
+}
+
+.trainingNote strong {
+  color: var(--ink, #173b34);
+}
+
+.illustrationNote {
+  border-top: 0;
+  color: rgba(23, 59, 52, 0.62);
+  font-size: 13px;
+  margin: 0;
+  padding-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .lessonHeader {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .selector {
+    justify-self: start;
+  }
+
+  .lessonContent {
+    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .explanationPane {
+    border-left: 0;
+    border-top: 0;
+    max-width: none;
+    padding-left: 0;
+    padding-top: 18px;
+  }
+
+  .liveCopy {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .lesson {
+    padding: 18px 16px 12px;
+  }
+
+  .headingCopy h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+
+  .headingCopy p {
+    line-height: 1.35;
+  }
+
+  .lessonHeader {
+    gap: 12px;
+  }
+
+  .selectorLabel {
+    margin-bottom: 3px;
+  }
+
+  .modelToggle {
+    gap: 18px;
+    width: 100%;
+  }
+
+  .modelButton {
+    flex: 1;
+    font-size: 13px;
+    min-height: 31px;
+    padding-bottom: 5px;
+  }
+
+  .modelButton span:last-child {
+    white-space: nowrap;
+  }
+
+  .lessonRule {
+    margin-top: 12px;
+  }
+
+  .lessonContent {
+    gap: 13px;
+    padding: 12px 0 8px;
+  }
+
+  .modelHeading {
+    font-size: 16px;
+  }
+
+  .modelDescriptor {
+    font-size: 13px;
+  }
+
+  .diagramFigure {
+    margin-top: 6px;
+  }
+
+  .forestDiagram {
+    max-height: 104px;
+  }
+
+  .boostingDiagram {
+    max-height: 100px;
+  }
+
+  .figcaption {
+    line-height: 1.25;
+    margin-top: 2px;
+  }
+
+  .equation {
+    gap: 5px 7px;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
+
+  .equation span,
+  .equation strong {
+    font-size: 17px;
+  }
+
+  .explanationPane {
+    padding-top: 10px;
+  }
+
+  .explanationPane h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .controlLine {
+    margin-top: 8px;
+  }
+
+  .trainingNote {
+    margin-top: 5px;
+    padding-top: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson * {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+  }
+}
